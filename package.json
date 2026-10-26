@@ -1,0 +1,51 @@
+{
+  "name": "bookleaf-author-support-portal",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build --webpack",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=react-server --import tsx --test --test-concurrency=1 src/server/auth/auth.test.ts src/server/books/books.test.ts src/server/tickets/tickets.test.ts src/server/admin/admin-tickets.test.ts src/server/ai/classification-provider.test.ts src/server/ai/classification.test.ts src/server/ai/draft-prompt.test.ts src/server/ai/draft-provider.test.ts src/server/ai/response-drafts.test.ts && node --import tsx --test src/components/books/book-card.test.ts",
+    "check": "npm run lint && npm run typecheck",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:status": "prisma migrate status",
+    "db:seed": "prisma db seed",
+    "db:seed:validate": "tsx prisma/validate-seed.ts",
+    "db:setup:demo": "npm run db:migrate:deploy && npm run db:seed && npm run db:seed:validate",
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate"
+  },
+  "dependencies": {
+    "@better-auth/prisma-adapter": "1.7.12",
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "better-auth": "1.7.12",
+    "dotenv": "18.0.9",
+    "next": "16.4.3",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "20.19.43",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "prisma": "7.10.1",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

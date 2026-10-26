@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --canvas: #f4f7f5;
+  --surface: #ffffff;
+  --ink: #172c35;
+  --ink-soft: #29434d;
+  --muted: #5c6f76;
+  --rule: #d9e2de;
+  --leaf: #286451;
+  --leaf-pale: #e8f2ed;
+  --critical: #b42318;
+  --critical-pale: #fef3f2;
+  --warning: #8a6100;
+  --warning-pale: #fff8d6;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-leaf: var(--leaf);
+  --color-leaf-pale: var(--leaf-pale);
+  --color-critical: var(--critical);
+  --color-critical-pale: var(--critical-pale);
+  --color-warning: var(--warning);
+  --color-warning-pale: var(--warning-pale);
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", Baskerville, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--canvas);
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #c9e2d6;
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

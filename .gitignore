@@ -1,0 +1,66 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/src/generated/prisma/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+.env.docker
+!.env.example
+!.env.docker.example
+
+
+# local inspection artifacts
+/tmp/
+
+# internal development artifacts not included in the reviewer submission
+/design-system/
+/docs/
+/src/components/shell/app-shell.tsx
+/src/server/README.md
+/src/app/api/.gitkeep
+/src/server/ai/.gitkeep
+/src/server/auth/.gitkeep
+/src/server/database/.gitkeep
+/src/server/repositories/.gitkeep
+/src/server/services/.gitkeep
+/src/server/validation/.gitkeep
+/src/types/.gitkeep
+
+# confidential assignment brief (keep outside the repository)
+/BookLeaf_Technical_Assignment_1.pdf
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
